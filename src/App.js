@@ -5,6 +5,7 @@ import About from "./components/About/About";
 import Shop from "./components/Shop/Shop";
 import Orders from "./components/Orders/Orders";
 import Inventory from "./components/Inventory/Inventory";
+import { productsAndCart } from "./loaders/productsAndCart";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,9 +22,7 @@ function App() {
         },
         {
           path: "/orders",
-          loader: async () => {
-            return fetch("products.json");
-          },
+          loader: productsAndCart,
           element: <Orders />,
         },
         {
