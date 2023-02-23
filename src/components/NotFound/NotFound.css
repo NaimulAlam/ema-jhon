@@ -1,0 +1,24 @@
+.not-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30vh auto;
+}
+
+.not-found-details {
+  text-align: center;
+  padding: 10px;
+}
+
+.not-found-btn {
+  cursor: pointer;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(8, 60, 123, 0.3);
+}
+
+.not-found-btn:hover {
+  background-color: rgba(8, 60, 123, 0.753);
+}

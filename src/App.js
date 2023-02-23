@@ -6,6 +6,7 @@ import Shop from "./components/Shop/Shop";
 import Orders from "./components/Orders/Orders";
 import Inventory from "./components/Inventory/Inventory";
 import { productsAndCart } from "./loaders/productsAndCart";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ function App() {
     {
       path: "/about",
       element: <About />,
+    },
+    {
+      path: "/*",
+      element: <NotFound />,
     },
   ]);
 
