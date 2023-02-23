@@ -2,12 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
-import { addToDb, getStoredCart } from "../../utilities/fakedb";
-import { useLoaderData } from "react-router-dom";
+import {
+  addToDb,
+  deleteShoppingCart,
+  getStoredCart,
+} from "../../utilities/fakedb";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Shop = () => {
   const products = useLoaderData();
   const [cart, setCart] = useState([]);
+
+  const clearCart = () => {
+    setCart([]);
+    deleteShoppingCart();
+  };
 
   useEffect(() => {
     const storedCart = getStoredCart();
@@ -18,7 +27,6 @@ const Shop = () => {
         const quantity = storedCart[id];
         addedProduct.quantity = quantity;
         savedCart.push(addedProduct);
-        console.log("AP", addedProduct);
       }
     }
     setCart(savedCart);
@@ -54,7 +62,13 @@ const Shop = () => {
         ))}
       </div>
       <div className="cart-container">
-        <Cart cart={cart} products={products} />
+        <Cart cart={cart} clearCart={clearCart}>
+          <Link to="/orders">
+            {cart.length > 0 && (
+              <button className="review-order">Review Order</button>
+            )}
+          </Link>
+        </Cart>
       </div>
     </div>
   );

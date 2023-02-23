@@ -1,8 +1,7 @@
 import React from "react";
 import "./Cart.css";
 
-const Cart = ({ cart }) => {
-  console.log("cart", cart);
+const Cart = ({ cart, clearCart, children }) => {
   // const { id, price, shipping } = cart;
 
   let total = 0;
@@ -30,6 +29,14 @@ const Cart = ({ cart }) => {
       <p>Shipping Cost: ${shipping.toFixed(2)} </p>
       <p>Tax: ${tax} </p>
       <h5>Grand Total: ${grandTotal}</h5>
+      <div>
+        {grandTotal > 0 && (
+          <button className="clear-cart-btn" onClick={() => clearCart()}>
+            Clear Cart
+          </button>
+        )}
+      </div>
+      {children}
     </div>
   );
 };

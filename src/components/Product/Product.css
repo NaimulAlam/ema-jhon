@@ -41,5 +41,6 @@
   margin-right: 5px;
 }
 .btn-cart:hover {
+  cursor: pointer;
   background-color: orange;
 }
