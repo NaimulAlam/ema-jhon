@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import ReviewProducts from "../ReviewProducts/ReviewProducts";
+import { removeFromDb } from "../../utilities/fakedb";
 
 function Orders() {
   const { products, previousCart } = useLoaderData();
@@ -13,6 +14,7 @@ function Orders() {
       (product) => product.id !== productId
     );
     setCart(remainingProducts);
+    removeFromDb(productId);
   };
 
   return (
