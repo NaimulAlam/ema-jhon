@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 function Orders() {
+  const products = useLoaderData();
+
   return (
-    <div>Orders</div>
-  )
+    <div>
+      <h1>Total Orders: {products.length}</h1>
+    </div>
+  );
 }
 
-export default Orders
+export default Orders;
