@@ -18,3 +18,61 @@
   cursor: pointer;
   background-color: rgba(248, 23, 23, 0.7);
 }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  gap: 5px;
+  padding: 4px;
+}
+
+.cart-item h5 {
+  font-size: 10px;
+  margin: 0;
+}
+.cart-item p {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 500;
+  color: dimgray;
+}
+.cart-item img {
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+}
+
+.cart-details-div {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.cart-delete-btn-container {
+  text-align: center;
+}
+.cart-delete-btn {
+  height: 20px;
+  width: 20px;
+  border-radius: 20%;
+  padding: 2px;
+  border: none;
+  background-color: rgba(235, 87, 87, 0.168);
+}
+
+.cart-delete-btn:hover {
+  cursor: pointer;
+  background-color: rgb(235, 87, 87, 0.6);
+}
+
+.cart-delete-icon {
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+.cart-delete-icon:hover {
+  font-size: 18px;
+  color: red;
+}

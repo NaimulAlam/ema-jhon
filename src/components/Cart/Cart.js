@@ -1,5 +1,7 @@
 import React from "react";
 import "./Cart.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = ({ cart, clearCart, children }) => {
   // const { id, price, shipping } = cart;
@@ -24,6 +26,27 @@ const Cart = ({ cart, clearCart, children }) => {
   return (
     <div className="cart">
       <h4>Order Summary</h4>
+      <div>
+        {cart.map((pd) => (
+          <div className="cart-item" key={pd.id}>
+            <img src={pd.img} alt="" />
+            <div>
+              <h5>Name: {pd.name}</h5>
+              <div className="cart-details-div">
+                <p>${pd.price}</p>
+                <div className="cart-delete-btn-container">
+                  <button
+                    onClick={() => console.log("btnClicked")}
+                    className="cart-delete-btn"
+                  >
+                    <FontAwesomeIcon icon={faX} className="cart-delete-icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
       <p>Selected Items: {quantity}</p>
       <p>Total Price: ${total.toFixed(2)}</p>
       <p>Shipping Cost: ${shipping.toFixed(2)} </p>
